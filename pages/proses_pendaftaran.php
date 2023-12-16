@@ -50,7 +50,7 @@ if ($hasil) {
 ?>
 <script language="JavaScript">
 alert('Pendaftaran Anda Berhasil Dilakukan, Silahkan Datang Ke service Kami Maksimal 10 Menit Dari Sekarang');
-document.location='../laporan/struk.php?id=<?php echo $no_antrian;?>'</script>
+document.location='../index.php?id=<?php echo $no_antrian;?>'</script>
 <?php
 }else{
 ?>
