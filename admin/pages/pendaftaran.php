@@ -42,14 +42,14 @@
                                     <thead>
                                         <tr>
                                             <th>No.</th>
-                                            <th>No. Antrian</th>
+                                            <th>No.Antrian</th>
                                             <th>Tanggal Boking</th>
                                             <th>Jam Boking</th>
                                             <th>Nama</th>
-                                            <th>No. Plat</th>
+                                            <th>No.Plat</th>
                                             <th>Jenis service</th>
                                             <th>Total Biaya</th>
-                                            <th width="30%">Status</th>
+                                            <th>Status Pendaftaran</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
