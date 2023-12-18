@@ -195,17 +195,18 @@ session_start();
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
-                                        <label for="select">Type Mobil</label>
+                                   <label for="select">Type Mobil</label>
                                         <?php
-                                        $result2 = mysql_query("select * from type_mobil");
-                                        echo '<select name="type_mobil" class="form-control-rounded form-control" required>';
-                                        echo '<option>Pilih Type Mobil</option>';
-                                        while ($row2 = mysql_fetch_array($result2)) {
-                                             echo '<option value="' . $row2['type_mobil'] . '">' . $row2['type_mobil'] . '</option>';
-                                        }
-                                        echo '</select>';
+                                             $result2 = mysql_query("SELECT * FROM type_mobil");
+                                             echo '<select name="type_mobil" class="form-control-rounded form-control" required>';
+                                             echo '<option value="" disabled selected>Pilih Type Mobil</option>'; // Menambahkan opsi default dengan value kosong dan menonaktifkannya
+                                             while ($row2 = mysql_fetch_array($result2)) {
+                                                  echo '<option value="' . $row2['type_mobil'] . '">' . $row2['type_mobil'] . '</option>';
+                                             }
+                                             echo '</select>';
                                         ?>
                                    </div>
+
 
                                    <div class="col-md-6 col-sm-6">
                                         <label for="email">No. Antrian</label>
@@ -215,20 +216,20 @@ session_start();
 
 
                                    <div class="col-md-6 col-sm-6">
-                                        <label for="select">Jenis service</label>
+                                   <label for="select">Jenis service</label>
                                         <?php
-                                        $result = mysql_query("SELECT * FROM jenis_service");
-                                        $jsArray = "var prdName = new Array();\n";
-                                        echo '<select class="form-control" name="id_jenis_service" onchange="document.getElementById(\'txt2\').value = prdName[this.value]">';
-                                        echo '<option>Pilih Jenis service</option>';
-                                        while ($row = mysql_fetch_array($result)) {
-                                             echo '<option value="' . $row['id_jenis_service'] . '">' . $row['jenis_service'] . '</option>';
-                                             $jsArray .= "prdName['" . $row['id_jenis_service'] . "'] = '" . addslashes($row['biaya']) . "';\n";
-                                        }
-                                        echo '</select>';
-
+                                             $result = mysql_query("SELECT * FROM jenis_service");
+                                             $jsArray = "var prdName = new Array();\n";
+                                             echo '<select class="form-control" name="id_jenis_service" onchange="document.getElementById(\'txt2\').value = prdName[this.value]" required>';
+                                             echo '<option value="" disabled selected>Pilih Jenis service</option>';
+                                             while ($row = mysql_fetch_array($result)) {
+                                                  echo '<option value="' . $row['id_jenis_service'] . '">' . $row['jenis_service'] . '</option>';
+                                                  $jsArray .= "prdName['" . $row['id_jenis_service'] . "'] = '" . addslashes($row['biaya']) . "';\n";
+                                             }
+                                             echo '</select>';
                                         ?>
                                    </div>
+
 
                                    <div class="col-md-6 col-sm-6">
                                         <label for="pendaftaran">Tanggal Pendaftaran</label>
