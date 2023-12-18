@@ -74,19 +74,23 @@
                                                     if ($data['status'] == 'Lunas') {
                                                     ?>
                                                         Lunas
-                                                    <?php } else { ?>
-                                                        <select name="status" onchange="this.form.submit();" class="form-control">
-                                                            <option value="Pendaftaran" <?php if ($data['status'] == 'Pendaftaran') {
-                                                                                            echo 'selected';
-                                                                                        } ?>>Pendaftaran</option>
-                                                            <option value="Dalam Pengerjaan" <?php if ($data['status'] == 'Dalam Pengerjaan') {
-                                                                                                    echo 'selected';
-                                                                                                } ?>>Dalam Pengerjaan</option>
-                                                            <option value="Batal" <?php if ($data['status'] == 'Batal') {
-                                                                                        echo 'selected';
-                                                                                    } ?>>Batal</option>
-                                                        </select>
-                                                    <?php } ?>
+                                                        <?php } else { ?>
+                                                            <select name="status" onchange="this.form.submit();" class="form-control">
+                                                                <option value="Pendaftaran" <?php echo ($data['status'] == 'Pendaftaran') ? 'selected' : ''; ?>>Pendaftaran</option>
+                                                                <option value="Dalam Pengerjaan" <?php echo ($data['status'] == 'Dalam Pengerjaan') ? 'selected' : ''; ?>>Dalam Pengerjaan</option>
+                                                                <option value="Batal" <?php echo ($data['status'] == 'Batal') ? 'selected' : ''; ?>>
+                                                                    Batal
+                                                                    <?php
+                                                                    // Logika penghapusan data
+                                                                    if ($data['status'] == 'Batal') {
+                                                                        $id_pendaftaran = $data['id_pendaftaran'];
+                                                                        $hapus_sql = "DELETE FROM pendaftaran WHERE id_pendaftaran = $id_pendaftaran";
+                                                                        mysqli_query($conn, $hapus_sql);
+                                                                    }
+                                                                    ?>
+                                                                </option>
+                                                            </select>
+                                                        <?php } ?>
                                                 </form>
                                             </td>
                                             <td align="center">
