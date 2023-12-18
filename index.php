@@ -288,7 +288,7 @@ session_start();
 
                                    <div class="col-md-6 col-sm-6">
                                         <label for="email">Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Anda">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email Anda" required="">
                                    </div>
 
                                    <div class="col-md-6 col-sm-6">
